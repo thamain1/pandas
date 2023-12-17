@@ -1,0 +1,9 @@
+{
+	"name": "IntelliSolutionsAI",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a69fb8f4-6aae-4190-95f4-254bcea6e12d",
+		"tenantId": "370b45f5-2611-4bac-b331-45671600a193"
+	}
+}
