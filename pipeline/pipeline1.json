@@ -17,13 +17,11 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "BinarySource",
+						"type": "ExcelSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": true
-						},
-						"formatSettings": {
-							"type": "BinaryReadSettings"
+							"recursive": true,
+							"enablePartitionDiscovery": false
 						}
 					},
 					"sink": {
@@ -36,7 +34,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "testdatasetinput",
+						"referenceName": "Excel1",
 						"type": "DatasetReference"
 					}
 				],
