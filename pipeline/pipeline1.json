@@ -40,7 +40,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Binary1test",
+						"referenceName": "testdatasetinput",
 						"type": "DatasetReference"
 					}
 				]
