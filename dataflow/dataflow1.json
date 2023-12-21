@@ -16,7 +16,8 @@
 			"transformations": [],
 			"scriptLines": [
 				"parameters{",
-				"     parameter1 as any",
+				"     parameter1 as any,",
+				"     parameter2 as string",
 				"}",
 				"source(output(",
 				"          Column_1 as string,",
