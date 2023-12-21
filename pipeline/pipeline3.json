@@ -24,12 +24,25 @@
 						}
 					},
 					"sink": {
-						"type": "BinarySink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
@@ -39,7 +52,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "testdatasetinput",
+						"referenceName": "DelimitedText2",
 						"type": "DatasetReference"
 					}
 				]
@@ -73,6 +86,44 @@
 						"computeType": "General"
 					},
 					"traceLevel": "Fine"
+				}
+			},
+			{
+				"name": "Power Query1",
+				"type": "ExecuteWranglingDataflow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "powerquery1",
+						"type": "DataFlowReference"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"queries": [
+						{
+							"queryName": "UserQuery",
+							"dataflowSinks": [
+								{
+									"name": "UserQueryDestinationDatasetd7z",
+									"dataset": {
+										"referenceName": "DestinationDataset_d7z",
+										"type": "DatasetReference"
+									},
+									"script": "sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> UserQueryDestinationDatasetd7z"
+								}
+							]
+						}
+					]
 				}
 			}
 		],
