@@ -1,0 +1,46 @@
+{
+	"name": "SourceDataset_d7z",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Table1 (2)",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Copy of tabula-tl (2) master_share copyv.8.xlsx",
+				"container": "transactionlogs"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": [
+			{
+				"name": "Time Stamp Audit Category",
+				"type": "String"
+			},
+			{
+				"name": "Transaction.1",
+				"type": "String"
+			},
+			{
+				"name": "Transaction.2",
+				"type": "String"
+			},
+			{
+				"name": "Transaction.7",
+				"type": "String"
+			},
+			{
+				"name": "Order ID",
+				"type": "String"
+			},
+			{
+				"name": "Workstation.1",
+				"type": "String"
+			}
+		]
+	}
+}
