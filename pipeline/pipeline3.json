@@ -62,7 +62,7 @@
 				"type": "ExecuteDataFlow",
 				"dependsOn": [
 					{
-						"activity": "Copy data1",
+						"activity": "Power Query2",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -89,9 +89,16 @@
 				}
 			},
 			{
-				"name": "Power Query1",
+				"name": "Power Query2",
 				"type": "ExecuteWranglingDataflow",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Copy data1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -101,29 +108,11 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataflow": {
-						"referenceName": "powerquery1",
-						"type": "DataFlowReference"
-					},
 					"compute": {
 						"coreCount": 8,
 						"computeType": "General"
 					},
-					"queries": [
-						{
-							"queryName": "UserQuery",
-							"dataflowSinks": [
-								{
-									"name": "UserQueryDestinationDatasetd7z",
-									"dataset": {
-										"referenceName": "DestinationDataset_d7z",
-										"type": "DatasetReference"
-									},
-									"script": "sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> UserQueryDestinationDatasetd7z"
-								}
-							]
-						}
-					]
+					"queries": []
 				}
 			}
 		],
