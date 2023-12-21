@@ -1,0 +1,39 @@
+{
+	"name": "ExcelTL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Table1 (2)",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Copy of tabula-tl (2) master_share copyv.8.xlsx",
+				"container": "transactionlogs"
+			}
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}
