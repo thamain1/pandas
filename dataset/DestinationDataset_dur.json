@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_dur",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "Transaction Log 1 Page Model Data",
+				"container": "intellidoxx"
+			}
+		},
+		"schema": {}
+	}
+}
