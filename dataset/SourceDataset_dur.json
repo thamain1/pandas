@@ -1,0 +1,19 @@
+{
+	"name": "SourceDataset_dur",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage3",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "Batsi",
+				"container": "intellidoxx"
+			}
+		},
+		"schema": {}
+	}
+}
